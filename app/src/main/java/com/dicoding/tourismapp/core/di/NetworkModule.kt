@@ -3,6 +3,8 @@ package com.dicoding.tourismapp.core.di
 import com.dicoding.tourismapp.core.data.source.remote.network.ApiService
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -10,6 +12,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 @Module
+@InstallIn(SingletonComponent::class) // decide which Hilt `Component` to use this module, which is "SingletonComponent"
+// use `SingletonComponent` because it's the highest hierarchy, which could be placed anywhere
 class NetworkModule {
 
     @Provides // use `@Provides` when the 'class is from "third-party" dependencies
