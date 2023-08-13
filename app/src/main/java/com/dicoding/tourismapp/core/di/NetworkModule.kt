@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit
 @Module
 class NetworkModule {
 
-    @Provides
+    @Provides // use `@Provides` when the 'class is from "third-party" dependencies
     fun provideOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))

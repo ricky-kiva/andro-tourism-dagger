@@ -14,7 +14,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class TourismRepository @Inject constructor(
+class TourismRepository @Inject constructor( // use `@Inject` when the class is made inside "the project"
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource,
     private val appExecutors: AppExecutors

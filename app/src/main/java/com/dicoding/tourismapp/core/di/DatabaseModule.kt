@@ -12,7 +12,7 @@ import javax.inject.Singleton
 class DatabaseModule {
 
     @Singleton
-    @Provides
+    @Provides // use `@Provides` when the 'class is from "third-party" dependencies
     fun provideDatabase(context: Context): TourismDatabase = Room.databaseBuilder(
         context, TourismDatabase::class.java, "Tourism.db"
     ).fallbackToDestructiveMigration().build()
